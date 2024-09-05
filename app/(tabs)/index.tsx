@@ -4,7 +4,10 @@ import axios from 'axios';
 
 export default function HomeScreen() {
   return (
-    <></>
+    
+    function fetch{
+      axios.get()
+    }
   );
 }
 
