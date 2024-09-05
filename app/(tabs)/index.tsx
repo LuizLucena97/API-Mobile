@@ -1,14 +1,33 @@
-import { StyleSheet } from 'react-native';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { Button, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { Post } from '@/api/AxiosComponent';
 
 export default function HomeScreen() {
+
+  useEffect(() => {
+    fetchPosts()
+  })
+
+  async function fetchPosts() {
+    const response = await Post.getPosts('posts')
+    console.log(response)
+  }
+
+  async function sendPost() {
+    //
+  }
+
   return (
-    
-    async function fetch(){
-      await axios.get('https://jsonplaceholder.typicode.com/posts')
-    }
-  );
+    <>
+
+      <SafeAreaView>
+        <Button title='Enviar Post' onPress={() => sendPost()} />
+      </SafeAreaView>
+
+    </>
+  )
 }
 
 const styles = StyleSheet.create({
