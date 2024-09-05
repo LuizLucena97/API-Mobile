@@ -5,8 +5,8 @@ import axios from 'axios';
 export default function HomeScreen() {
   return (
     
-    function fetch{
-      axios.get()
+    async function fetch(){
+      await axios.get('https://jsonplaceholder.typicode.com/posts')
     }
   );
 }
